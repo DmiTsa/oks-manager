@@ -1,0 +1,46 @@
+.orderTableRow {
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    border-bottom: 2px solid lightslategrey;
+}
+
+.orderTableCell {
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    text-wrap: wrap;
+    font-size: small;
+}
+
+.cellBold {
+    font-weight: bold;
+}
+
+.orderTableRow .orderTableCell:nth-child(1) {
+    width: 10%;
+}
+
+.orderTableRow .orderTableCell:nth-child(2) {
+    width: 40%;
+}
+
+.orderTableRow .orderTableCell:nth-child(3) {
+    width: 10%;
+}
+
+.orderTableRow .orderTableCell:nth-child(4) {
+    width: 10%;
+}
+
+.orderTableRow .orderTableCell:nth-child(5) {
+    width: 10%;
+}
+
+.orderTableRow .orderTableCell:nth-child(6) {
+    width: 10%;
+}
+
+.orderTableRow .orderTableCell:nth-child(7) {
+    width: 10%;
+}

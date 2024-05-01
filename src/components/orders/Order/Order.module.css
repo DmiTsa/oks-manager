@@ -1,0 +1,10 @@
+.order:hover {
+    font-weight: bold;
+}
+
+.order {
+    font-size: small;
+    letter-spacing: 1px;
+    /* padding: 10px; */
+    cursor: pointer;
+}
