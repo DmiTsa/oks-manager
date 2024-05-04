@@ -1,6 +1,6 @@
 import Filter from "./components/Filter/Filter";
-import { FaRegUserCircle } from "react-icons/fa";
 import OrdersTable from "./components/orders/OrdersTable/OrdersTable";
+import { FaRegUserCircle } from "react-icons/fa";
 import './App.css';
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
         <OrdersTable />
       </div>
     </div>
+
   );
 }
 
