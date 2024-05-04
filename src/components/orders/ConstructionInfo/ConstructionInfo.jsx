@@ -1,3 +1,7 @@
+import Input from "./Input/Input";
+
+import style from "./ConstructionInfo.module.css";
+
 export default function ConstructionInfo({ construction }) {
   const {
     name,
@@ -13,51 +17,35 @@ export default function ConstructionInfo({ construction }) {
 
   return (
     <form>
-      <label>{name}</label>
-      <label>
-        <input type="text" placeholder="Ед. изм." value={capacityEm} />
-        <input
-          type="text"
-          placeholder="Проектная мощность"
-          value={capacityProj}
-        />
-        <input
-          type="text"
-          placeholder="Фактическая мощность"
-          value={capacityReal}
-        />
-        Мощность объекта
-      </label>
-      <label>
-        <input type="text" placeholder="Сметная стоимость" value={cost} />
-        <input type="text" placeholder="в т.ч. СМР" value={jobCostPart} />
-        <input
-          type="text"
-          placeholder="в т.ч. оборудование"
-          value={equipCostPart}
-        />
-        Сметная стоимость
-      </label>
-      <label>
-        <input type="text" placeholder="ПОС" value={period} />
-        ПОС (мес.)
-      </label>
-      <label>
-        <input type="text" placeholder="Договор" value={contract} />
-        Договор
-      </label>
-      <button type="button" disabled>
-        Сохранить
-      </button>
+      <div className={style.header}>{name}</div>
+      <div className={style.body}>
+        <div className={style.bodySection}>
+          <div className={style.bodySectionHead}>Мощность объекта</div>
+          <Input text={"Ед. изм."} value={capacityEm} />
+          <Input text={"Проект. мощность"} value={capacityProj} />
+          <Input text={"Факт. мощность"} value={capacityReal} />
+        </div>
+        <div className={style.bodySection}>
+          <div className={style.bodySectionHead}>Стоимость объекта</div>
+          <Input text={"Сметная стоимость"} value={cost} />
+          <Input text={"в т.ч. СМР"} value={jobCostPart} />
+          <Input text={"в т.ч. оборуд."} value={equipCostPart} />
+        </div>
+        <div className={style.bodySection}>
+          <div className={style.bodySectionHead}>ПОС (мес.)</div>
+          <Input text={"ПОС"} value={period} />
+        </div>
+        <div className={style.bodySection}>
+          <div className={style.bodySectionHead}>Договор</div>
+          <Input text={"№"} value={contract?.number} />
+          <Input text={"Дата"} value={contract?.date} />
+        </div>
+      </div>
+      <div className={style.footer}>
+        <button type="button" disabled>
+          Сохранить
+        </button>
+      </div>
     </form>
   );
 }
-
-// мощность объекта ед изм..
-// мощность объекта значение проект..
-// мощность объекта значение факт..
-// сметная стоимость всего
-// в тч. смр
-// в тч. оборуд
-// пос
-// договор
