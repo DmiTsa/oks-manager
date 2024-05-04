@@ -13,8 +13,9 @@
     font-size: small;
 }
 
-.cellBold {
+.cellHover:hover {
     font-weight: bold;
+    cursor: pointer;
 }
 
 .orderTableRow .orderTableCell:nth-child(1) {
