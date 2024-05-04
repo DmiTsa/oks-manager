@@ -7,7 +7,6 @@ export const constructionSlice = createSlice({
     name: 'constructiions',
     initialState,
     reducers: {
-
     }
 })
 
