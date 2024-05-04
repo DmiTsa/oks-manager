@@ -1,0 +1,19 @@
+* {
+    /* index global app */
+    background-color: #33B4EE;
+    /* table bottom */
+    border-bottom: 2px solid lightslategrey;
+    border-bottom: 2px solid lightgray;
+
+    /* header main menu */
+    background-color: #003C78;
+    /* submenu */
+    background-color: #1c5a99;
+    /* menu text */
+    color: #FFFFEF;
+    /* filter */
+    background-color: #15a1c0;
+    /* filter hover */
+    background-color: #00cdfb;
+
+}
