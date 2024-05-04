@@ -1,0 +1,20 @@
+.input {
+    width: 110px;
+    margin: 0 10px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: small;
+    outline: none;
+    cursor: pointer;
+}
+
+.input:hover {
+    background-color: #00cdfb6b;
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: small;
+}

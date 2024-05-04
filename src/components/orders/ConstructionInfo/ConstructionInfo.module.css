@@ -1,0 +1,28 @@
+.header {
+    margin: 5px;
+    padding: 5px;
+    border-bottom: 2px solid lightslategrey;
+    font-size: small;
+    font-weight: bold;
+}
+
+.body {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.bodySection {
+    /* background-color: #15a1c0; */
+    padding: 10px;
+    /* border: 2px solid lightgray; */
+    border-radius: 5px;
+    width: 250px;
+    min-height: 100px;
+    margin: 5px;
+}
+
+.bodySectionHead {
+    font-size: small;
+    font-weight: bold;
+}

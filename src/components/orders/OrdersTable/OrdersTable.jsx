@@ -23,6 +23,7 @@ export default function OrdersTable() {
   const constructionNameClickHandler = (id) => {
     const construction = constructionsData.find((el) => el.id === id);
     setConstructionModal(construction);
+
     setModalActive(true);
   };
 
