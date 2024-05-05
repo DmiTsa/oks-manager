@@ -50,15 +50,25 @@ export default function OrdersTable() {
   //create modal type function
   return (
     <>
-      {modalType === "info" ? (
+      {
         <Modal active={modalActive} toggleActive={toggleActive}>
-          <ConstructionInfo construction={constructionModal} />
+          {modalType === "info" ? (
+            <ConstructionInfo construction={constructionModal} />
+          ) : modalType === "order" ? (
+            <OrderInfo order={orderModal} />
+          ) : null}
         </Modal>
-      ) : (
+      }
+      {/* {
         <Modal active={modalActive} toggleActive={toggleActive}>
-          <OrderInfo order={orderModal} />
+          {modalType === "info" ? (
+            <ConstructionInfo construction={constructionModal} />
+          ) : (
+            <OrderInfo order={orderModal} />
+          )}
         </Modal>
-      )}
+      } */}
+
       <div className={style.orderTableRow}>
         <div className={nStyle}>Код</div>
         <div className={nStyle}>Объект строительства</div>
