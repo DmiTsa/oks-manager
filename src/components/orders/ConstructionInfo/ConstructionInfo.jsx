@@ -1,4 +1,4 @@
-import Input from "./Input/Input";
+import Input from "../Input/Input";
 
 import style from "./ConstructionInfo.module.css";
 

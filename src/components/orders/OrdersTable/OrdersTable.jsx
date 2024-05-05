@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import Construction from "../Construction/Construction.jsx";
-import Modal from "../../../partsComponent/Modal/Modal.jsx";
 import ConstructionInfo from "../ConstructionInfo/ConstructionInfo.jsx";
+import OrderInfo from "../OrderInfo/OrderInfo.jsx";
+import Modal from "../../../partsComponent/Modal/Modal.jsx";
 import { selectFilterConstructions } from "../../../redux/orders/filterOrderSlice.js";
 import { selectConstructions } from "../../../redux/orders/constructionSlice.js";
 import stringMatcher from "../../../utils/stringMatcher.js";
@@ -10,7 +11,10 @@ import style from "./OrdersTable.module.css";
 
 export default function OrdersTable() {
   const [modalActive, setModalActive] = useState(false);
+  const [modalType, setModalType] = useState("");
   const [constructionModal, setConstructionModal] = useState({});
+  const [orderModal, setOrderModal] = useState({});
+
   const matchConstruction = useSelector(selectFilterConstructions);
   const constructionsData = useSelector(selectConstructions);
 
@@ -21,21 +25,40 @@ export default function OrdersTable() {
   );
 
   const constructionNameClickHandler = (id) => {
-    const construction = constructionsData.find((el) => el.id === id);
+    const construction = filtredData.find((el) => el.id === id);
     setConstructionModal(construction);
+    setModalType("info");
+    setModalActive(true);
+  };
 
+  const orderClickHandler = (id) => {
+    const allOrders = filtredData.reduce((acc, con) => {
+      return acc.concat(
+        con.docOrders.concat(con.commissonOrders.concat(con.sertificateOrders))
+      );
+    }, []);
+
+    const order = allOrders.find((el) => el.id === id);
+    setOrderModal(order);
+    setModalType("order");
     setModalActive(true);
   };
 
   const toggleActive = () => {
     setModalActive(!modalActive);
   };
-
+  //create modal type function
   return (
     <>
-      <Modal active={modalActive} toggleActive={toggleActive}>
-        <ConstructionInfo construction={constructionModal} />
-      </Modal>
+      {modalType === "info" ? (
+        <Modal active={modalActive} toggleActive={toggleActive}>
+          <ConstructionInfo construction={constructionModal} />
+        </Modal>
+      ) : (
+        <Modal active={modalActive} toggleActive={toggleActive}>
+          <OrderInfo order={orderModal} />
+        </Modal>
+      )}
       <div className={style.orderTableRow}>
         <div className={nStyle}>Код</div>
         <div className={nStyle}>Объект строительства</div>
@@ -51,7 +74,8 @@ export default function OrdersTable() {
           <Construction
             key={construction.id}
             construction={construction}
-            click={constructionNameClickHandler}
+            clickConstruction={constructionNameClickHandler}
+            clickOrder={orderClickHandler}
           />
         );
       })}

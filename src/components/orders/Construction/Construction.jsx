@@ -1,7 +1,11 @@
 import Order from "../Order/Order";
 import style from "./Construction.module.css";
 
-export default function Construction({ construction, click }) {
+export default function Construction({
+  construction,
+  clickConstruction,
+  clickOrder,
+}) {
   const {
     id,
     code,
@@ -20,7 +24,7 @@ export default function Construction({ construction, click }) {
         <div
           className={style.orderTableCell + " " + style.cellHover}
           onClick={() => {
-            click(id);
+            clickConstruction(id);
           }}
         >
           {name}
@@ -30,17 +34,17 @@ export default function Construction({ construction, click }) {
 
         <div className={style.orderTableCell}>
           {commissonOrders.map((order, i) => {
-            return <Order key={i} order={order} />;
+            return <Order key={i} order={order} clickOrder={clickOrder} />;
           })}
         </div>
         <div className={style.orderTableCell}>
           {docOrders.map((docOrder, i) => {
-            return <Order key={i} order={docOrder} />;
+            return <Order key={i} order={docOrder} clickOrder={clickOrder} />;
           })}
         </div>
         <div className={style.orderTableCell}>
           {sertificateOrders.map((order, i) => {
-            return <Order key={i} order={order} />;
+            return <Order key={i} order={order} clickOrder={clickOrder} />;
           })}
         </div>
       </div>
