@@ -47,7 +47,7 @@ export default function OrdersTable() {
   const toggleActive = () => {
     setModalActive(!modalActive);
   };
-  //create modal type function
+
   return (
     <>
       {
@@ -59,15 +59,6 @@ export default function OrdersTable() {
           ) : null}
         </Modal>
       }
-      {/* {
-        <Modal active={modalActive} toggleActive={toggleActive}>
-          {modalType === "info" ? (
-            <ConstructionInfo construction={constructionModal} />
-          ) : (
-            <OrderInfo order={orderModal} />
-          )}
-        </Modal>
-      } */}
 
       <div className={style.orderTableRow}>
         <div className={nStyle}>Код</div>

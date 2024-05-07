@@ -7,6 +7,7 @@ export const constructionSlice = createSlice({
     name: 'constructiions',
     initialState,
     reducers: {
+        // setConstruction: (state, action) => { action.payload } //action.payload - новый (измененный объект)
     }
 })
 

@@ -1,6 +1,6 @@
 import style from "./Input.module.css";
 
-export default function Input({ text, value }) {
+export default function Input({ text, value, onChange }) {
   return (
     <label className={style.label}>
       {text}
@@ -9,6 +9,7 @@ export default function Input({ text, value }) {
         type="text"
         placeholder={text}
         value={value}
+        onChange={onChange}
       />
     </label>
   );
